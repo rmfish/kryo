@@ -147,7 +147,7 @@ public class DefaultClassResolver implements ClassResolver {
 		Class type = nameIdToClass.get(nameId);
 		if (type == null) {
 			// Only read the class name the first time encountered in object graph.
-			String className = input.readString();
+			String className = input.readString().trim();
 			type = getTypeByName(className);
 			if (type == null) {
 				try {
